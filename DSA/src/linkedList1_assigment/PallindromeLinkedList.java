@@ -1,8 +1,11 @@
+/*You have been given a head to a singly linked list of integers.
+ *Write a function check to whether the list given is a 'Palindrome' or not.
+ * */
 package linkedList1_assigment;
 
 import java.util.Scanner;
 
-import linkedList.Node;
+import linkedList1.Node;
 
 public class PallindromeLinkedList {
 

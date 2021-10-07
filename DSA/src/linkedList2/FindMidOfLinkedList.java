@@ -1,43 +1,38 @@
-/*You have been given a singly linked list of integers.
- *Write a function that returns the index/position of integer data denoted by 'N' (if it exists). Return -1 otherwise.
- * */
-package linkedList1_assigment;
+// Find the mid element in a linked List without calculating the length.
+package linkedList2;
 
 import java.util.Scanner;
 
 import linkedList1.Node;
 
-public class FindNode {
+public class FindMidOfLinkedList {
 
 	public static void main(String[] args) {
 		
 		Node<Integer> head = takeInput();
 		
-		int idx = findNode(head, 3);
+		Node<Integer> midNode = midPoint(head);
 		
-		System.out.println(idx);
+		System.out.println(midNode.data);
 
 	}
-	
-	// return the index of the node if it is present else return -1. 
-	public static int findNode(Node<Integer> head, int n) {
-		// empty linkedList
+
+	// fast and slow pointer approach.
+	public static Node<Integer> midPoint(Node<Integer> head) {
 		if(head == null){
-			return -1;
+			return head;
 		}
 
-		Node<Integer> temp = head;
-		int i = 0;
+		Node<Integer> slow = head;
+		Node<Integer> fast = head;
 
-		while(temp != null){
-			if(temp.data == n){
-				return i;
-			}
-			i++;
-			temp = temp.next;
+		while(fast.next != null && fast.next.next != null){
+			slow = slow.next;
+			fast = fast.next.next;
 		}
 
-		return -1;
+		return slow;
+
 	}
 
 	// take input in linked list until the user enter -1.
@@ -75,5 +70,4 @@ public class FindNode {
 
 		return head;
 	}
-
 }

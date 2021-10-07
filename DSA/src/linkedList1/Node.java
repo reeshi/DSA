@@ -1,4 +1,4 @@
-package linkedList;
+package linkedList1;
 
 public class Node<T> {
 	// making public beacuse it will be visible in entire project.

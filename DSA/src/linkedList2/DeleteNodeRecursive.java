@@ -1,70 +1,32 @@
-/*You have been given a singly linked list of integers along with an integer 'N'.
- *Write a function to append the last 'N' nodes towards the front of the singly linked list
- *and returns the new head to the list
- *
- * input : 1 -> 2 -> 3 -> 4 -> 5 , N = 3
- * output : 3 -> 4 -> 5 -> 1 -> 2
- * */
-package linkedList1_assigment;
+package linkedList2;
 
 import java.util.Scanner;
 
 import linkedList1.Node;
 
-public class AppendLastNToFirst {
+public class DeleteNodeRecursive {
 
 	public static void main(String[] args) {
-
+		
 		Node<Integer> head = takeInput();
 		
-		head = appendLastNToFirst(head, 2);
+		head = deleteNodeRec(head, 6);
 		
 		printLinkedList(head);
 
 	}
-
-	public static Node<Integer> appendLastNToFirst(Node<Integer> head, int n) {
-		// empty linkedList OR n == 0
-		if(head == null || n == 0){
-			return head;
-		}
-
-		int len = length(head);
-		if(len == 1 && n == 1){
-			return head;
-		}
-
-		Node<Integer> tail = head;
-		while(tail.next != null){
-			tail = tail.next;
-		}
-
-		tail.next = head;
-
-		Node<Integer> temp = head;
-		int i=0;
-		while(i < len-n-1){
-			temp = temp.next;
-			i++;
-		}
-
-		head = temp.next;
-		temp.next = null;
-
-		return head;
-
-	}
-
-	public static int length(Node<Integer> head){
-		Node<Integer> temp = head;
-		int length = 0;
-
-		while(temp != null){
-			length++;
-			temp = temp.next;
-		}
-
-		return length;
+	
+	public static Node<Integer> deleteNodeRec(Node<Integer> head, int pos) {
+    	if(head == null){
+            return head;
+        }
+        
+        if(pos == 0){
+            return head.next;
+        }else{
+          	head.next = deleteNodeRec(head.next, pos-1);
+        	return head;
+        }
 	}
 
 	// take input in linked list until the user enter -1.
@@ -102,7 +64,7 @@ public class AppendLastNToFirst {
 
 		return head;
 	}
-	
+
 	static void printLinkedList(Node<Integer> head) {
 		Node<Integer> temp = head;
 
@@ -111,4 +73,5 @@ public class AppendLastNToFirst {
 			temp = temp.next;
 		}
 	}
+
 }

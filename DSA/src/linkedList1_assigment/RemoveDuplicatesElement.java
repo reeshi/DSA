@@ -9,7 +9,7 @@ package linkedList1_assigment;
 
 import java.util.Scanner;
 
-import linkedList.Node;
+import linkedList1.Node;
 
 public class RemoveDuplicatesElement {
 
