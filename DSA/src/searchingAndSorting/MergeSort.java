@@ -4,7 +4,7 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {2,6,8,5,4,3};
+		int[] arr = {5,4,3,2,1,100};
 		
 		mergeSort(arr);
 		

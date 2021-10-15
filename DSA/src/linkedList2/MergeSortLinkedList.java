@@ -25,7 +25,7 @@ public class MergeSortLinkedList {
 		// mid of the linkedlist.
 		Node<Integer> midNode = mid(head);
 
-		// split the linkedlit into two parts.
+		// split the linkedlist into two parts.
 		Node<Integer> part1Head = head;
 		Node<Integer> part2Head = midNode.next;
 		midNode.next = null;
