@@ -2,14 +2,15 @@ package arrays;
 
 import java.util.Scanner;
 
-public class ArrayIntro {
+
+public class ArrayIntro{
 
 	public static void main(String[] args) {
 		
 		int[] input = takeArrayInput();
 		
 		printArray(input);
-
+		
 	}
 	
 	static int[] takeArrayInput() {

@@ -13,7 +13,7 @@ public class RemoveConsecutiveDuplicates {
 		for(int i: result) {
 			System.out.println(i);
 		}
-
+	
 	}
 	
 	public static ArrayList<Integer> removeConsecutiveDuplicates(int[] arr){
